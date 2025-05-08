@@ -1,0 +1,18 @@
+#DirectoryIndex dishub2023/index.php
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ index.php [L]
+#RewriteRule !^(dishub/|index\.php) [NC,F]
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .* index.php/$0 [PT,L]
+#RewriteRule .* sms/index.php/$0 [PT,L]
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+# Enforce SSL https://www.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

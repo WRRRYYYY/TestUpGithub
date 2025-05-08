@@ -1,0 +1,200 @@
+<?php namespace Config;
+
+use CodeIgniter\Config\BaseConfig;
+
+class Filters extends BaseConfig
+{
+	// Makes reading things below nicer,
+	// and simpler to change out script that's used.
+	public $aliases = [
+		'csrf'     => \CodeIgniter\Filters\CSRF::class,
+		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
+		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+	];
+
+	// Always applied before every request
+	public $globals = [
+		'before' => [
+			//'honeypot'
+			// 'csrf',
+			'csrf' => ['except' => [
+					'Bsa/chg_pwd',
+
+					'Adm/save_data',
+					'Adm/save_data_ext',
+					'Adm/del_data',
+					'Adm/del_dataimg',
+					'Adm/del_data_dtl',
+					'Adm/del_data_dtl_img',
+					'Adm/upload_img_crop',
+					'Adm/upload_img_crop_png',
+					'Adm/upload_doc',
+					'Adm/upload_docv2',
+					'Adm/upload_docv2s3',
+					'Adm/remove_doc',
+					'Adm/remove_docv2',
+					'Adm/remove_docv2s3',
+					'Adm/summernote_saveimg',
+					'Adm/get_detail_list',
+					'Adm/get_data_detail_ext',
+					'Adm/get_xlsx',
+					'Adm/preview_xls',
+					'Adm/upload_gbr',
+					'Adm/del_gbr',
+					'Adm/print_doc',
+					
+					'Teu/save_data',
+					'Teu/save_data_ext',
+					'Teu/del_data',
+					'Teu/del_dataimg',
+					'Teu/del_data_dtl',
+					'Teu/del_data_dtl_img',
+					'Teu/upload_img_crop',
+					'Teu/upload_img_crop_png',
+					'Teu/upload_doc',
+					'Teu/upload_docv2',
+					'Teu/upload_docv2s3',
+					'Teu/remove_doc',
+					'Teu/remove_docv2',
+					'Teu/remove_docv2s3',
+					'Teu/summernote_saveimg',
+					'Teu/get_detail_list',
+					'Teu/get_data_detail_ext',
+					'Teu/get_xlsx',
+					'Teu/preview_xls',
+					'Teu/upload_gbr',
+					'Teu/del_gbr',
+					'Teu/print_doc',
+					
+					'Pim/save_data',
+					'Pim/save_data_ext',
+					'Pim/del_data',
+					'Pim/del_dataimg',
+					'Pim/del_data_dtl',
+					'Pim/del_data_dtl_img',
+					'Pim/upload_img_crop',
+					'Pim/upload_img_crop_png',
+					'Pim/upload_doc',
+					'Pim/upload_docv2',
+					'Pim/upload_docv2s3',
+					'Pim/remove_doc',
+					'Pim/remove_docv2',
+					'Pim/remove_docv2s3',
+					'Pim/summernote_saveimg',
+					'Pim/get_detail_list',
+					'Pim/get_data_detail_ext',
+					'Pim/get_xlsx',
+					'Pim/preview_xls',
+					'Pim/upload_gbr',
+					'Pim/del_gbr',
+					'Pim/print_doc',
+                    
+                    'Stf/save_data',
+					'Stf/save_data_ext',
+					'Stf/del_data',
+					'Stf/del_dataimg',
+					'Stf/del_data_dtl',
+					'Stf/del_data_dtl_img',
+					'Stf/upload_img_crop',
+					'Stf/upload_img_crop_png',
+					'Stf/upload_doc',
+					'Stf/upload_docv2',
+					'Stf/upload_docv2s3',
+					'Stf/remove_doc',
+					'Stf/remove_docv2',
+					'Stf/remove_docv2s3',
+					'Stf/summernote_saveimg',
+					'Stf/get_detail_list',
+					'Stf/get_data_detail_ext',
+					'Stf/get_xlsx',
+					'Stf/preview_xls',
+					'Stf/upload_gbr',
+					'Stf/del_gbr',
+					'Stf/print_doc',
+					
+                    'Ket/save_data',
+					'Ket/save_data_ext',
+					'Ket/del_data',
+					'Ket/del_dataimg',
+					'Ket/del_data_dtl',
+					'Ket/del_data_dtl_img',
+					'Ket/upload_img_crop',
+					'Ket/upload_img_crop_png',
+					'Ket/upload_doc',
+					'Ket/upload_docv2',
+					'Ket/upload_docv2s3',
+					'Ket/remove_doc',
+					'Ket/remove_docv2',
+					'Ket/remove_docv2s3',
+					'Ket/summernote_saveimg',
+					'Ket/get_detail_list',
+					'Ket/get_data_detail_ext',
+					'Ket/get_xlsx',
+					'Ket/preview_xls',
+					'Ket/upload_gbr',
+					'Ket/del_gbr',
+					'Ket/print_doc',
+					
+					'Ktu/save_data',
+					'Ktu/save_data_ext',
+					'Ktu/del_data',
+					'Ktu/del_dataimg',
+					'Ktu/del_data_dtl',
+					'Ktu/del_data_dtl_img',
+					'Ktu/upload_img_crop',
+					'Ktu/upload_img_crop_png',
+					'Ktu/upload_doc',
+					'Ktu/upload_docv2',
+					'Ktu/upload_docv2s3',
+					'Ktu/remove_doc',
+					'Ktu/remove_docv2',
+					'Ktu/remove_docv2s3',
+					'Ktu/summernote_saveimg',
+					'Ktu/get_detail_list',
+					'Ktu/get_data_detail_ext',
+					'Ktu/get_xlsx',
+					'Ktu/preview_xls',
+					'Ktu/upload_gbr',
+					'Ktu/del_gbr',
+					'Ktu/print_doc',
+                    
+					'Skr/save_data',
+					'Skr/save_data_ext',
+					'Skr/del_data',
+					'Skr/del_dataimg',
+					'Skr/del_data_dtl',
+					'Skr/del_data_dtl_img',
+					'Skr/upload_img_crop',
+					'Skr/upload_img_crop_png',
+					'Skr/upload_doc',
+					'Skr/upload_docv2',
+					'Skr/upload_docv2s3',
+					'Skr/remove_doc',
+					'Skr/remove_docv2',
+					'Skr/remove_docv2s3',
+					'Skr/summernote_saveimg',
+					'Skr/get_detail_list',
+					'Skr/get_data_detail_ext',
+					'Skr/get_xlsx',
+					'Skr/preview_xls'
+					
+					
+				]
+			]
+		],
+		'after'  => [
+//			'toolbar',
+			//'honeypot'
+		],
+	];
+
+	// Works on all of a particular HTTP method
+	// (GET, POST, etc) as BEFORE filters only
+	//     like: 'post' => ['CSRF', 'throttle'],
+	public $methods = [];
+
+	// List filter aliases and any before/after uri patterns
+	// that they should run on, like:
+	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
+	public $filters = [];
+}

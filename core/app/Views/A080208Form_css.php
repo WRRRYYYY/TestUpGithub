@@ -1,0 +1,1 @@
+<link href="<?php echo base_url($public_folder) ?>/plugins/summernote/dist/summernote-bs4.css" rel="stylesheet" />
